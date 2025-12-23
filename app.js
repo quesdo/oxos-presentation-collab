@@ -344,9 +344,12 @@ async function initSupabase() {
 
     console.log('OXOS Real-time subscription active');
 
-    // Sync to current state if presentation is already running
+    // Don't auto-sync when first joining - user must be present from the start
+    // If presentation is already in progress, new users will see the intro screen
+    // and only sync when they see real-time updates (someone clicks Next)
+    console.log('Current session state:', data.current_slide);
     if (data.current_slide > -1) {
-        syncToSlide(data.current_slide);
+        console.log('Presentation already in progress - waiting for real-time updates');
     }
 }
 
@@ -376,21 +379,18 @@ function syncToSlide(targetSlide) {
     // Set flag to prevent loop
     isLocalAction = true;
 
-    // Calculate how many times to advance
+    // Only sync if moving forward by 1 (normal progression)
+    // or going back to -1 (restart)
     const diff = targetSlide - currentSlide;
 
-    if (diff > 0) {
-        // Need to advance
-        for (let i = 0; i < diff; i++) {
-            nextSlideLocal();
-        }
-    } else if (diff < 0) {
-        // Need to go back (restart and advance to target)
+    if (diff === 1) {
+        // Normal next slide progression
+        nextSlideLocal();
+    } else if (targetSlide === -1 && currentSlide !== -1) {
+        // Restart to beginning
         restartPresentationLocal();
-        for (let i = 0; i < targetSlide; i++) {
-            nextSlideLocal();
-        }
     }
+    // Ignore other cases - user wasn't present from the start
 
     // Reset flag
     isLocalAction = false;
