@@ -234,7 +234,16 @@ function showEndScreen() {
     }, 600);
 }
 
-function restartPresentation() {
+async function restartPresentation() {
+    // Update Supabase to sync with all clients
+    if (!isLocalAction) {
+        await updateSession({ current_slide: -1 });
+    }
+
+    restartPresentationLocal();
+}
+
+function restartPresentationLocal() {
     // Hide all media
     hideAllMedia();
 
@@ -377,7 +386,7 @@ function syncToSlide(targetSlide) {
         }
     } else if (diff < 0) {
         // Need to go back (restart and advance to target)
-        restartPresentation();
+        restartPresentationLocal();
         for (let i = 0; i < targetSlide; i++) {
             nextSlideLocal();
         }
