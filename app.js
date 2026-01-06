@@ -1,41 +1,206 @@
-// ===== PRESENTATION DATA =====
-const slides = [
-    {
-        text: "Virtual Twin of the Product\n\nAt OXOS, the virtual twin is not just a 3D model.\nIt is the single, complete, and living reference of the product.",
-        media: null
+// ===== MULTI-LANGUAGE PRESENTATION DATA =====
+const translations = {
+    en: {
+        slides: [
+            {
+                text: "Virtual Twin of the Product\n\nAt OXOS, the virtual twin is not just a 3D model.\nIt is the single, complete, and living reference of the product.",
+                media: null
+            },
+            {
+                text: "It concentrates all the product's intelligence in one place:\ndetailed bill of materials, exact configurations, manufacturing constraints, engineering and certification data, material history.",
+                media: "PRD 1"
+            },
+            {
+                text: "Before a single machine is powered on, we already know the predicted cycle time, material costs, geometric risks, and even the environmental footprint.",
+                media: "PRD 2"
+            },
+            {
+                text: "This virtual twin feeds OXOS's generative AI.\nConcretely, for the manufacturing of a housing, OXOS automatically generates the optimal machining sequence, the associated 5-axis CNC program, and the relevant quality inspections to fits with A&D regulations.",
+                media: "PRD 3"
+            },
+            {
+                text: "In production, the virtual twin tracks progress, quality status, and process deviations in real time.\nIn engineering and compliance, it ensures full traceability — from as-specified to as-maintained — with certification reports generated automatically.",
+                media: "PRD 4"
+            },
+            {
+                text: "With OXOS, industry moves from reactive execution\nto a predictive process, continuously auditable.",
+                media: "PRD Content"
+            }
+        ],
+        buttons: {
+            start: "Start Presentation",
+            continue: "Continue",
+            finish: "Finish",
+            restart: "Restart Presentation"
+        },
+        endScreen: "<strong>Thank you</strong><br>Presentation Complete"
     },
-    {
-        text: "It concentrates all the product's intelligence in one place:\ndetailed bill of materials, exact configurations, manufacturing constraints, engineering and certification data, material history.",
-        media: "PRD 1"
+    fr: {
+        slides: [
+            {
+                text: "Jumeau Virtuel du Produit\n\nChez OXOS, le jumeau virtuel n'est pas qu'un modèle 3D.\nC'est la référence unique, complète et vivante du produit.",
+                media: null
+            },
+            {
+                text: "Il concentre toute l'intelligence du produit en un seul endroit :\nnomenclature détaillée, configurations exactes, contraintes de fabrication, données d'ingénierie et de certification, historique des matériaux.",
+                media: "PRD 1"
+            },
+            {
+                text: "Avant même qu'une seule machine ne soit mise sous tension, nous connaissons déjà le temps de cycle prévu, les coûts des matériaux, les risques géométriques et même l'empreinte environnementale.",
+                media: "PRD 2"
+            },
+            {
+                text: "Ce jumeau virtuel alimente l'IA générative d'OXOS.\nConcrètement, pour la fabrication d'un boîtier, OXOS génère automatiquement la séquence d'usinage optimale, le programme CNC 5 axes associé et les contrôles qualité pertinents conformes aux réglementations A&D.",
+                media: "PRD 3"
+            },
+            {
+                text: "En production, le jumeau virtuel suit en temps réel l'avancement, le statut qualité et les écarts de processus.\nEn ingénierie et conformité, il assure une traçabilité complète — du spécifié au maintenu — avec des rapports de certification générés automatiquement.",
+                media: "PRD 4"
+            },
+            {
+                text: "Avec OXOS, l'industrie passe d'une exécution réactive\nà un processus prédictif, continuellement auditable.",
+                media: "PRD Content"
+            }
+        ],
+        buttons: {
+            start: "Démarrer la Présentation",
+            continue: "Continuer",
+            finish: "Terminer",
+            restart: "Redémarrer la Présentation"
+        },
+        endScreen: "<strong>Merci</strong><br>Présentation Terminée"
     },
-    {
-        text: "Before a single machine is powered on, we already know the predicted cycle time, material costs, geometric risks, and even the environmental footprint.",
-        media: "PRD 2"
+    es: {
+        slides: [
+            {
+                text: "Gemelo Virtual del Producto\n\nEn OXOS, el gemelo virtual no es solo un modelo 3D.\nEs la referencia única, completa y viva del producto.",
+                media: null
+            },
+            {
+                text: "Concentra toda la inteligencia del producto en un solo lugar:\nlista de materiales detallada, configuraciones exactas, restricciones de fabricación, datos de ingeniería y certificación, historial de materiales.",
+                media: "PRD 1"
+            },
+            {
+                text: "Antes de encender una sola máquina, ya conocemos el tiempo de ciclo previsto, los costos de materiales, los riesgos geométricos e incluso la huella ambiental.",
+                media: "PRD 2"
+            },
+            {
+                text: "Este gemelo virtual alimenta la IA generativa de OXOS.\nConcretamente, para la fabricación de una carcasa, OXOS genera automáticamente la secuencia de mecanizado óptima, el programa CNC de 5 ejes asociado y las inspecciones de calidad relevantes conforme a las regulaciones A&D.",
+                media: "PRD 3"
+            },
+            {
+                text: "En producción, el gemelo virtual rastrea en tiempo real el progreso, el estado de calidad y las desviaciones del proceso.\nEn ingeniería y cumplimiento, garantiza una trazabilidad completa — desde lo especificado hasta lo mantenido — con informes de certificación generados automáticamente.",
+                media: "PRD 4"
+            },
+            {
+                text: "Con OXOS, la industria pasa de una ejecución reactiva\na un proceso predictivo, continuamente auditable.",
+                media: "PRD Content"
+            }
+        ],
+        buttons: {
+            start: "Iniciar Presentación",
+            continue: "Continuar",
+            finish: "Finalizar",
+            restart: "Reiniciar Presentación"
+        },
+        endScreen: "<strong>Gracias</strong><br>Presentación Completa"
     },
-    {
-        text: "This virtual twin feeds OXOS's generative AI.\nConcretely, for the manufacturing of a housing, OXOS automatically generates the optimal machining sequence, the associated 5-axis CNC program, and the relevant quality inspections to fits with A&D regulations.",
-        media: "PRD 3"
+    de: {
+        slides: [
+            {
+                text: "Virtueller Zwilling des Produkts\n\nBei OXOS ist der virtuelle Zwilling nicht nur ein 3D-Modell.\nEr ist die einzige, vollständige und lebendige Referenz des Produkts.",
+                media: null
+            },
+            {
+                text: "Er konzentriert die gesamte Intelligenz des Produkts an einem Ort:\ndetaillierte Stückliste, exakte Konfigurationen, Fertigungsbeschränkungen, Engineering- und Zertifizierungsdaten, Materialhistorie.",
+                media: "PRD 1"
+            },
+            {
+                text: "Bevor eine einzige Maschine eingeschaltet wird, kennen wir bereits die vorhergesagte Zykluszeit, Materialkosten, geometrische Risiken und sogar den ökologischen Fußabdruck.",
+                media: "PRD 2"
+            },
+            {
+                text: "Dieser virtuelle Zwilling speist die generative KI von OXOS.\nKonkret generiert OXOS für die Herstellung eines Gehäuses automatisch die optimale Bearbeitungssequenz, das zugehörige 5-Achs-CNC-Programm und die relevanten Qualitätsprüfungen gemäß A&D-Vorschriften.",
+                media: "PRD 3"
+            },
+            {
+                text: "In der Produktion verfolgt der virtuelle Zwilling in Echtzeit Fortschritt, Qualitätsstatus und Prozessabweichungen.\nIm Engineering und Compliance gewährleistet er vollständige Rückverfolgbarkeit — von der Spezifikation bis zur Wartung — mit automatisch generierten Zertifizierungsberichten.",
+                media: "PRD 4"
+            },
+            {
+                text: "Mit OXOS bewegt sich die Industrie von reaktiver Ausführung\nzu einem prädiktiven Prozess, der kontinuierlich überprüfbar ist.",
+                media: "PRD Content"
+            }
+        ],
+        buttons: {
+            start: "Präsentation Starten",
+            continue: "Weiter",
+            finish: "Beenden",
+            restart: "Präsentation Neustarten"
+        },
+        endScreen: "<strong>Vielen Dank</strong><br>Präsentation Abgeschlossen"
     },
-    {
-        text: "In production, the virtual twin tracks progress, quality status, and process deviations in real time.\nIn engineering and compliance, it ensures full traceability — from as-specified to as-maintained — with certification reports generated automatically.",
-        media: "PRD 4"
-    },
-    {
-        text: "With OXOS, industry moves from reactive execution\nto a predictive process, continuously auditable.",
-        media: "PRD Content"
+    zh: {
+        slides: [
+            {
+                text: "产品虚拟孪生\n\n在OXOS，虚拟孪生不仅仅是一个3D模型。\n它是产品唯一、完整且动态的参考。",
+                media: null
+            },
+            {
+                text: "它将产品的所有智能集中在一个地方：\n详细的物料清单、精确的配置、制造约束、工程和认证数据、材料历史。",
+                media: "PRD 1"
+            },
+            {
+                text: "在启动任何一台机器之前，我们已经知道预测的周期时间、材料成本、几何风险，甚至环境足迹。",
+                media: "PRD 2"
+            },
+            {
+                text: "这个虚拟孪生为OXOS的生成式AI提供动力。\n具体来说，对于外壳的制造，OXOS会自动生成最优的加工序列、相关的5轴CNC程序，以及符合航空航天和国防法规的相关质量检查。",
+                media: "PRD 3"
+            },
+            {
+                text: "在生产中，虚拟孪生实时跟踪进度、质量状态和流程偏差。\n在工程和合规性方面，它确保完整的可追溯性——从规定到维护——自动生成认证报告。",
+                media: "PRD 4"
+            },
+            {
+                text: "借助OXOS，工业从被动执行\n转向可持续审计的预测性流程。",
+                media: "PRD Content"
+            }
+        ],
+        buttons: {
+            start: "开始演示",
+            continue: "继续",
+            finish: "完成",
+            restart: "重新开始演示"
+        },
+        endScreen: "<strong>谢谢</strong><br>演示完成"
     }
-];
+};
 
 // ===== STATE MANAGEMENT =====
 let currentSlide = -1; // Start at -1 to show intro
 let activeMedia = null; // Track currently visible media
 let soundStarted = false; // Track if PRD Sound has been shown
+let currentLanguage = 'en'; // Default language (each user can change independently)
 
 // ===== SUPABASE REAL-TIME SYNC =====
 let supabaseClient = null;
 let realtimeChannel = null;
 let sessionId = null; // Current session ID
 let isLocalAction = false; // Flag to prevent loops
+
+// Get current slides based on selected language
+function getSlides() {
+    return translations[currentLanguage].slides;
+}
+
+function getButtonText(key) {
+    return translations[currentLanguage].buttons[key];
+}
+
+function getEndScreenText() {
+    return translations[currentLanguage].endScreen;
+}
 
 // ===== SDK INTEGRATION =====
 // Function to send visibility messages to the SDK platform
@@ -81,11 +246,43 @@ function hideASISProduct() {
     console.log("AS IS Product hidden");
 }
 
+// ===== LANGUAGE SELECTOR =====
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    console.log('Language changed to:', lang);
+
+    // Update current slide text
+    if (currentSlide >= 0 && currentSlide < getSlides().length) {
+        const slideText = document.querySelector('.slide-text');
+        slideText.textContent = getSlides()[currentSlide].text;
+    }
+
+    // Update button text
+    const nextBtn = document.getElementById('nextBtn');
+    const btnText = nextBtn.querySelector('.btn-text');
+
+    if (currentSlide === -1) {
+        btnText.textContent = getButtonText('start');
+    } else if (currentSlide === getSlides().length - 1) {
+        btnText.textContent = getButtonText('finish');
+    } else if (currentSlide >= getSlides().length) {
+        btnText.textContent = getButtonText('restart');
+    } else {
+        btnText.textContent = getButtonText('continue');
+    }
+
+    // Update language selector buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+}
+
 // ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', async () => {
     initStars();
     await initSupabase();
     initPresentation();
+    initLanguageSelector();
 
     console.log("OXOS Presentation loaded - SDK ready");
     console.log("Supabase Real-time sync enabled - User ID:", window.USER_ID);
@@ -110,6 +307,18 @@ function initStars() {
 
         starsContainer.appendChild(star);
     }
+}
+
+// ===== LANGUAGE SELECTOR INITIALIZATION =====
+function initLanguageSelector() {
+    const languageSelector = document.getElementById('languageSelector');
+
+    // Add event listeners to language buttons
+    languageSelector.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            changeLanguage(btn.dataset.lang);
+        });
+    });
 }
 
 // ===== PRESENTATION LOGIC =====
@@ -163,7 +372,7 @@ function nextSlideLocal() {
     currentSlide++;
 
     // Check if presentation is complete
-    if (currentSlide >= slides.length) {
+    if (currentSlide >= getSlides().length) {
         // End of presentation
         showEndScreen();
         return;
@@ -174,8 +383,8 @@ function nextSlideLocal() {
     textContent.classList.add('slide-out');
 
     setTimeout(() => {
-        // Update text content
-        const slide = slides[currentSlide];
+        // Update text content with current language
+        const slide = getSlides()[currentSlide];
         slideText.textContent = slide.text;
 
         // Show new media if present (without hiding previous ones)
@@ -197,11 +406,11 @@ function nextSlideLocal() {
             textContent.classList.add('show');
         }, 100);
 
-        // Update button text
-        if (currentSlide === slides.length - 1) {
-            nextBtn.querySelector('.btn-text').textContent = 'Finish';
+        // Update button text based on language
+        if (currentSlide === getSlides().length - 1) {
+            nextBtn.querySelector('.btn-text').textContent = getButtonText('finish');
         } else {
-            nextBtn.querySelector('.btn-text').textContent = 'Continue';
+            nextBtn.querySelector('.btn-text').textContent = getButtonText('continue');
         }
 
         // Update progress
@@ -219,12 +428,12 @@ function showEndScreen() {
     nextBtn.classList.remove('show');
 
     setTimeout(() => {
-        slideText.innerHTML = '<strong>Thank you</strong><br>Presentation Complete';
+        slideText.innerHTML = getEndScreenText();
 
         textContent.classList.add('show');
 
         // Change button to restart
-        nextBtn.querySelector('.btn-text').textContent = 'Restart Presentation';
+        nextBtn.querySelector('.btn-text').textContent = getButtonText('restart');
         nextBtn.querySelector('.btn-icon').textContent = '↻';
         nextBtn.onclick = restartPresentation;
 
@@ -259,7 +468,7 @@ function restartPresentationLocal() {
 
     // Reset button
     const nextBtn = document.getElementById('nextBtn');
-    nextBtn.querySelector('.btn-text').textContent = 'Start Presentation';
+    nextBtn.querySelector('.btn-text').textContent = getButtonText('start');
     nextBtn.querySelector('.btn-icon').textContent = '→';
     nextBtn.onclick = nextSlide;
 
@@ -278,13 +487,9 @@ function updateProgress() {
     const progressBar = document.getElementById('progressBar');
     const progressText = document.getElementById('progressText');
 
-    const total = slides.length;
+    const total = getSlides().length;
     const current = Math.max(0, currentSlide + 1);
     const percentage = (current / total) * 100;
-
-    // Update progress bar
-    progressBar.style.setProperty('--progress', percentage + '%');
-    progressBar.querySelector('::after') || (progressBar.style.background = `linear-gradient(90deg, #1976d2 ${percentage}%, rgba(255, 255, 255, 0.1) ${percentage}%)`);
 
     // Simpler approach - directly set width via inline style
     const barFill = document.createElement('div');
