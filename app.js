@@ -364,9 +364,9 @@ function nextSlideLocal() {
         toggleVisibility("PRD Sound", true);
         soundStarted = true;
 
-        // HIDE AS IS Product and SHOW PSY Content immediately when starting
+        // HIDE AS IS Product and SHOW PRD Content immediately when starting
         hideASISProduct();
-        showMedia("PSY Content");
+        showMedia("PRD Content");
     }
 
     // Don't hide previous media - keep them visible!
