@@ -326,11 +326,8 @@ function initPresentation() {
     const nextBtn = document.getElementById('nextBtn');
     const textContent = document.getElementById('textContent');
 
-    // Hide all PRD media at start (but NOT AS IS Product yet)
-    hideAllMedia();
-
-    // Hide PRD Sound initially
-    toggleVisibility("PRD Sound", false);
+    // Don't hide/show anything at initial load - let SDK scene stay as is
+    // Hiding will happen when presentation starts
 
     // Show intro state
     setTimeout(() => {
@@ -443,7 +440,14 @@ function showEndScreen() {
 }
 
 async function restartPresentation() {
-    // Simply reload the page for a clean restart
+    // Hide all media and PRD Sound before restart
+    hideAllMedia();
+    toggleVisibility("PRD Sound", false);
+
+    // Wait for hide commands to be processed
+    await new Promise(resolve => setTimeout(resolve, 100));
+
+    // Reload the page for a clean restart
     window.location.reload();
 }
 
