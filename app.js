@@ -518,29 +518,37 @@ async function initSupabase() {
     const { createClient } = supabase;
     supabaseClient = createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
 
-    // Get or create the oxos presentation session (should be only one row)
-    const { data, error } = await supabaseClient
+    const sessionKey = new URLSearchParams(window.location.search).get('session') || 'default';
+    console.log('Session key:', sessionKey);
+
+    let { data, error } = await supabaseClient
         .from('oxos_presentation_session')
         .select('*')
+        .eq('session_key', sessionKey)
         .single();
 
-    if (error) {
-        console.error('Error fetching OXOS presentation session:', error);
-        return;
+    if (error || !data) {
+        const { data: newRow, error: insertError } = await supabaseClient
+            .from('oxos_presentation_session')
+            .insert({ session_key: sessionKey, current_slide: -1 })
+            .select().single();
+        if (insertError) { console.error('Error creating session:', insertError); return; }
+        data = newRow;
     }
 
     sessionId = data.id;
-    console.log('Connected to OXOS presentation session:', sessionId);
+    console.log('Connected to OXOS presentation session:', sessionId, '(key:', sessionKey, ')');
 
     // Subscribe to real-time changes
     realtimeChannel = supabaseClient
-        .channel('oxos_presentation_session_changes')
+        .channel(`oxos_collab_${sessionKey}`)
         .on(
             'postgres_changes',
             {
                 event: 'UPDATE',
                 schema: 'public',
-                table: 'oxos_presentation_session'
+                table: 'oxos_presentation_session',
+                filter: `id=eq.${sessionId}`
             },
             handleSessionUpdate
         )
