@@ -444,8 +444,8 @@ async function restartPresentation() {
     hideAllMedia();
     toggleVisibility("PRD Sound", false);
 
-    // Wait for hide commands to be processed
-    await new Promise(resolve => setTimeout(resolve, 100));
+    // Send restart signal to all clients via Supabase
+    await updateSession({ current_slide: -1 });
 
     // Reload the page for a clean restart
     window.location.reload();
