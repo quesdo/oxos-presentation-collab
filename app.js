@@ -25,6 +25,10 @@ const translations = {
             {
                 text: "With OXOS, industry moves from reactive execution\nto a predictive process, continuously auditable.",
                 media: "PRD Content"
+            },
+            {
+                text: "OXOS Virtual Twin\nWind Turbine — Live 3D Experience",
+                media: "Eolienne"
             }
         ],
         buttons: {
@@ -60,6 +64,10 @@ const translations = {
             {
                 text: "Avec OXOS, l'industrie passe d'une exécution réactive\nà un processus prédictif, continuellement auditable.",
                 media: "PRD Content"
+            },
+            {
+                text: "OXOS Jumeau Virtuel\nÉolienne — Expérience 3D en direct",
+                media: "Eolienne"
             }
         ],
         buttons: {
@@ -95,6 +103,10 @@ const translations = {
             {
                 text: "Con OXOS, la industria pasa de una ejecución reactiva\na un proceso predictivo, continuamente auditable.",
                 media: "PRD Content"
+            },
+            {
+                text: "OXOS Gemelo Virtual\nAerogenerador — Experiencia 3D en vivo",
+                media: "Eolienne"
             }
         ],
         buttons: {
@@ -130,6 +142,10 @@ const translations = {
             {
                 text: "Mit OXOS bewegt sich die Industrie von reaktiver Ausführung\nzu einem prädiktiven Prozess, der kontinuierlich überprüfbar ist.",
                 media: "PRD Content"
+            },
+            {
+                text: "OXOS Virtueller Zwilling\nWindkraftanlage — Live 3D-Erlebnis",
+                media: "Eolienne"
             }
         ],
         buttons: {
@@ -165,6 +181,10 @@ const translations = {
             {
                 text: "借助OXOS，工业从被动执行\n转向可持续审计的预测性流程。",
                 media: "PRD Content"
+            },
+            {
+                text: "OXOS 虚拟孪生\n风力发电机 — 实时3D体验",
+                media: "Eolienne"
             }
         ],
         buttons: {
@@ -232,7 +252,7 @@ function hideMedia(mediaName) {
 
 // Function to hide all media
 function hideAllMedia() {
-    const allMedia = ["PRD 1", "PRD 2", "PRD 3", "PRD 4", "PRD Content"];
+    const allMedia = ["PRD 1", "PRD 2", "PRD 3", "PRD 4", "PRD Content", "Eolienne"];
     allMedia.forEach(media => {
         toggleVisibility(media, false);
     });
