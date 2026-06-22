@@ -239,6 +239,11 @@ function showMedia(mediaName) {
         toggleVisibility(mediaName, true);
         activeMedia = mediaName;
         console.log(`Showing 3D object: ${mediaName}`);
+
+        if (mediaName === "Eolienne") {
+            toggleVisibility("room", false);
+            console.log("Hiding room for Eolienne display");
+        }
     }
 }
 
